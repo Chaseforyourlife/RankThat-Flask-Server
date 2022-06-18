@@ -1,0 +1,46 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block head %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+{%endblock%}
+
+
+{% block body %}
+
+
+    <h1>All Category Requests</h1>
+    {%for category in categories%}
+      <div class="container">
+        <img class="profile-pic" src="{{image_files[category.category_id]}}" alt="">
+        <a href="{{url_for('admin_edit_category_request',category_request_id=category.category_id)}}"><button type="button" class="button right">Edit</button></a>
+        <a href="{{url_for('admin_accept_category_request',category_request_id=category.category_id)}}"><button type="button" class="button right">Accept</button></a>
+        <h3>{{category.name}}<!--ID: {{category.category_id}}---></h3>
+
+
+  			<button type="button" name="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal{{category.category_id}}">Deny</button>
+  		</div>
+  		<div class="modal fade" id="deleteModal{{category.category_id}}" tabindex="-1" role="dialog" aria-labelledby="resetModalLabel" aria-hidden="true">
+  	    <div class="modal-dialog" role="document">
+  	      <div class="modal-content">
+  	        <div class="modal-header">
+  	          <h5 class="modal-title" id="deleteModalLabel">Delete Request?</h5>
+  	          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  	            <span aria-hidden="true">&times;</span>
+  	          </button>
+  	        </div>
+  	        <div class="modal-footer">
+  	          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  	          <form class="" action="{{url_for('admin_deny_category_request',category_request_id = category.category_id)}}" method="POST">
+  	            <input type="submit" name="" value="Delete" class="btn btn-danger">
+  	          </form>
+  	        </div>
+  	      </div>
+  	    </div>
+    	</div>
+
+
+
+    {%endfor%}
+{% endblock %}

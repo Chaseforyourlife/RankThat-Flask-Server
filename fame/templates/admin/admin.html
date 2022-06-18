@@ -1,0 +1,46 @@
+{%extends "layouts/base.html"%}
+{% block head %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+{%endblock%}
+{%block body%}
+  <h1>Admin</h1>
+
+
+
+
+
+
+  <div class="">
+    <a href="{{url_for('home')}}"><button class='left' type="button">Home</button></a>
+    <a href="{{url_for('admin_all_categories')}}"><button class='left' type="button">All Categories</button></a>
+    <a href="{{url_for('admin_category_requests')}}"><button class="left" type="button">Category Requests</button></a>
+    <a href="{{url_for('admin_all_noun_requests')}}"><button class="left" type="button">All Noun Requests</button></a>
+    <a href="{{url_for('admin_all_users')}}"><button class="left" type="button">All Users</button></a>
+    <a href="{{url_for('admin_upload_test_data')}}"><button class="left" type="button">Upload Test Data</button></a>
+  </div>
+
+
+  <div class="">
+    <button type="button" name="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Drop All</button>
+  </div>
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Delete All???</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <form class="" id="add_person_button" action="{{url_for('admin_drop_all_categories')}}" method="POST">
+            <input type="submit" name="" value="Delete" class="btn btn-danger">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{%endblock%}

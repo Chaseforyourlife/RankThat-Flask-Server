@@ -1,0 +1,11 @@
+{% extends 'layouts/navbar.html' %}
+
+
+{% block cat %}
+	<span class="category-navbar">
+		{% for category_name,function_name in function_cat_dict.items() %}
+			<a style="text-decoration:None;" href="{{url_for(function_name,category_url=category.name.replace(' ','_'))}}"><li class="category-navbar-item">{{category_name}}</li></a>
+		{% endfor %}
+	</span>
+	<h1 class='bubble-title' id='category-name' >{{category.name}}</h1>
+{% endblock %}

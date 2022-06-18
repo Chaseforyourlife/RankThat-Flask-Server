@@ -1,0 +1,35 @@
+{%extends "layouts/navbar.html"%}
+{%block content%}
+<h1 class="bubble-title">Account</h1>
+<br>
+{% if current_user.id == user.id %}
+<a href="{{url_for('edit_account',user_id=user.id)}}"><button class="button" type="button" name="button">Edit Account</button></a>
+{% endif %}
+
+<div class="form-card">
+
+    <h1 class=""> {{user.name}}</h1>
+    <h5 class=" italics">Joined {{user.date_joined}}</h5>
+
+
+    {% if current_user.id == user.id %}
+    <div class="profile-category">
+      <h2 class="underline">Personal Info</h2>
+      <h4 class="italics bolder">{{user.email}}</h4>
+    </div>
+    {% endif %}
+
+
+    {% if current_user.id == user.id %}
+    <div class="profile-category">
+      <h2 class="underline">Stats</h2>
+      <h3>All Time Matchups Played: {{user.all_time_matchups_played}}</h3>
+    </div>
+    {% endif %}
+
+
+
+
+  <script type="text/javascript" src="{{url_for('static',filename='scripts/hover.js')}}" id="game"></script>
+</div>
+{%endblock%}

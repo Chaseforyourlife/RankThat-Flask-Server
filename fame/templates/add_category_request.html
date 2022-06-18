@@ -1,0 +1,50 @@
+{% extends 'layouts/navbar.html' %}
+
+{% block head %}
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">-->
+{%endblock%}
+
+
+{% block content %}
+    <h1 class="bubble-title">Add Category Request</h1>
+    <div class="form-card">
+      <form action="" method="POST" enctype="multipart/form-data">
+        {{form.hidden_tag()}}
+
+
+          <div class="form-group">
+              {{form.name.label(class="form-control-label")}}
+              {%if form.name.errors%}
+
+                {{form.name(class="form-field")}}
+                <div class="invalid-feedback">
+                  {%for error in form.name.errors%}
+                    <span>{{error}}</span>
+                  {%endfor%}
+                </div>
+              {%else%}
+                {{form.name(class="form-field")}}
+              {%endif%}
+          </div>
+          <br>
+          <div class="form-group">
+            {{form.picture.label()}}
+            {{form.picture(class="")}}
+            {% if form.picture.errors %}
+              {% for error in form.picture.errors %}
+                <span class="text-danger">{{error}}</span><br>
+              {% endfor %}
+            {% endif %}
+          </div>
+          <br>
+        <div class="form-group">
+          {{form.submit(class="button")}}
+        </div>
+      </form>
+    </div>
+    <div class="border-top pt-3">
+
+    </div>
+
+{% endblock %}

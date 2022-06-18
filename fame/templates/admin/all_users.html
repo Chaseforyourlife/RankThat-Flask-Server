@@ -1,0 +1,24 @@
+{% extends 'layouts/base.html' %}
+
+{% block head %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+{%endblock%}
+
+{% block body %}
+  <form action="" method="post">
+    {{search.hidden_tag()}}
+    {{search.content( placeholder="Search Users")}}
+    {{search.submit(class="btn btn-outline-info")}}
+  </form>
+  <a href="{{url_for('admin_all_users',sort_by='.MATCHUPS_PLAYED')}}"><button type="button" name="button">Sort by Matchups Played</button></a>
+  {% for user in users %}
+    <div class="container">
+      <a href="#"><h2>{{user.name}}</h2></a>
+      <h3>{{user.email}}</h3>
+      <h3>ID: {{user.id}}</h3>
+      <h3>Is Admin: {{user.is_admin}}</h3>
+      <h3>{{user.all_time_matchups_played}}</h3>
+    </div>
+  {% endfor %}
+{% endblock %}

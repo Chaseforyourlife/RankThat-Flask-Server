@@ -1,0 +1,71 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block head %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+{%endblock%}
+
+
+{% block body %}
+
+
+    <h1>All Noun Requests</h1>
+    {%for noun in nouns%}
+      <div class="container">
+        {% if image_files[noun.noun_id] %}
+          <img class="profile-pic" src="{{image_files[noun.noun_id]}}" alt="">
+        {% endif %}
+        <a href="{{url_for('admin_edit_noun_request',noun_request_id=noun.noun_id,KEY='ALL')}}"><button type="button" class="button right">Edit</button></a>
+
+        <h3>{{noun.name}}</h3>
+        <h5>{{noun.description}}</h5>
+        <!--<h4>ID:{{noun.noun_id}}</h4>--->
+        <h3>Category: <a href="{{url_for('category',category_url=noun.category_name.replace(' ','_'))}}">{{noun.category_name}}</a></h3>
+
+
+        <button type="button" name="button" class="btn btn-success btn-sm m-1" data-toggle="modal" data-target="#acceptModal{{noun.noun_id}}">Accept</button>
+  			<button type="button" name="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal{{noun.noun_id}}">Deny</button>
+  		</div>
+      <div class="modal fade" id="acceptModal{{noun.noun_id}}" tabindex="-1" role="dialog" aria-labelledby="resetModalLabel" aria-hidden="true">
+  	    <div class="modal-dialog" role="document">
+  	      <div class="modal-content">
+  	        <div class="modal-header">
+  	          <h5 class="modal-title" id="deleteModalLabel">Accept Request?</h5>
+  	          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  	            <span aria-hidden="true">&times;</span>
+  	          </button>
+  	        </div>
+  	        <div class="modal-footer">
+  	          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  	          <form class="" action="{{url_for('admin_accept_noun_request',noun_request_id=noun.noun_id,KEY='ALL')}}" method="POST">
+  	            <input type="submit" name="" value="Delete" class="btn btn-danger">
+  	          </form>
+  	        </div>
+  	      </div>
+  	    </div>
+    	</div>
+
+  		<div class="modal fade" id="deleteModal{{noun.noun_id}}" tabindex="-1" role="dialog" aria-labelledby="resetModalLabel" aria-hidden="true">
+  	    <div class="modal-dialog" role="document">
+  	      <div class="modal-content">
+  	        <div class="modal-header">
+  	          <h5 class="modal-title" id="deleteModalLabel">Deny Request?</h5>
+  	          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  	            <span aria-hidden="true">&times;</span>
+  	          </button>
+  	        </div>
+  	        <div class="modal-footer">
+  	          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  	          <form class="" action="{{url_for('admin_deny_noun_request',noun_request_id = noun.noun_id,KEY='ALL')}}" method="POST">
+  	            <input type="submit" name="" value="Delete" class="btn btn-danger">
+  	          </form>
+  	        </div>
+  	      </div>
+  	    </div>
+    	</div>
+
+
+
+    {%endfor%}
+{% endblock %}

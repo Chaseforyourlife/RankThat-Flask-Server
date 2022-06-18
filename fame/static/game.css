@@ -1,0 +1,88 @@
+
+
+#game_div{
+
+  --game-div-width:60vw;
+  --game-border-width:.5vw;
+  --game-div-border-width:.5vw;
+  --line-width:var(--game-div-border-width);
+  border:var(--game-div-border-width) black solid;
+  border-radius: calc(var(--game-div-border-width)*1);
+  width:calc(var(--game-div-width) + var(--line-width));
+  height:calc(var(--game-div-width)/2);
+  margin:0px calc((100% - var(--game-div-width) - var(--game-div-border-width)*2 - var(--line-width))/2);
+  background:black;
+  margin-bottom:0px;
+  margin-top:0%;
+
+}
+
+
+
+
+
+#game_div div{
+
+  --game-div-div-width:calc(50% - var(--game-border-width)*2 - calc(var(--line-width)/2));
+
+  width:var(--game-div-div-width);
+  height:calc((var(--game-div-div-width) + var(--game-border-width))*2 + var(--line-width));
+  outline:none;
+  background-repeat: no-repeat;
+  float:left;
+  background:white;
+
+}
+
+
+#vertical-line{
+  height:100%;
+  width:var(--line-width);
+  float:left;
+  background-color: black;
+}
+
+
+
+#game_div h1{
+  background-color:rgba(255,255,255,.3);
+  border-radius: 0;
+
+}
+
+
+
+#game_div button{
+
+
+}
+
+#game_div div:hover{
+  cursor:pointer;
+}
+
+#famous-question{
+  font-weight: bold;
+  font-size:50px;
+
+  vertical-align:middle;
+
+  height:100px;
+}
+
+
+#left_noun{
+
+  border-top-right-radius:0px;
+  border-bottom-right-radius:0px;
+  border:var(--game-border-width) white solid;
+
+}
+
+#right_noun{
+
+  border-top-left-radius:0px;
+  border-bottom-left-radius:0px;
+  border:var(--game-border-width) white solid;
+
+}

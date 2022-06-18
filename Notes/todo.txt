@@ -1,0 +1,79 @@
+
+
+
+
+#Flask
+#Flask
+#Flask
+
+add Close matchups button
+
+maybe add a category comment section
+
+Eventually add mvp/subscription login if wanted
+
+add more games
+
+add essentially a personal tier list
+
+Add date added for categories
+
+add user images
+
+SAVE preused categories as phrase object in search engine
+
+Make Images bigger
+
+add point system
+
+Add User to Category Request page
+
+Add Success alert on request category submit
+
+
+Add a submitted by text on each category, with option on request category form if they want it shown
+
+add agreeableness score
+
+Redo game layout
+
+
+Add an outdated button, and if lots of people click it, it will go to top of outdated categories/wrong nouns
+add rating system of categories
+
+make it easier to add large amounts of nouns at once for USER...
+make it so user can propose a whole category filled with things....
+creator of the category has more value when requesting adding things.
+
+
+maybe include popularity in search results?
+
+add pagination
+
+Add matchup count at bottom of category card?
+
+
+CSS work at some point, including picture size update
+
+maybe add description to each category for use later.
+maybe add date added
+
+Make own css for User Request forms
+
+Add last updated?
+
+Search nouns in category for USER
+
+ADD method to choose hot categories
+
+Add Categories for categories
+
+Add monthly,daily matchup count
+
+could condense search site function to work with a dictionary only
+
+add warning system if someone clicks too fast
+
+#CSS
+#CSS
+#CSS

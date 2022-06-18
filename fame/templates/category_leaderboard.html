@@ -1,0 +1,20 @@
+{% extends 'layouts/category_navbar.html' %}
+
+
+{% block content %}
+<br>
+{% for rank,noun in enumerated %}
+  <div class="leaderboard-card">
+    <img class="profile-pic" src="{{image_files[noun.noun_id]}}" alt="">
+
+
+    <h2>{{noun.name}}</h2>
+    <h2>Rank: {{rank+1}}</h2>
+    {% if noun.description %}
+      <h5>{{noun.description}}</h5>
+    {% endif %}
+  </div>
+{% endfor %}
+<br>
+<h3 class="bubble-title">Something missing? <a href="{{url_for('category_add_noun_request',category_url=category_url)}}">Put in a request!</a></h3>
+{% endblock %}

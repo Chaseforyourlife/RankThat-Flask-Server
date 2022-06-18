@@ -1,0 +1,33 @@
+{%extends "layouts/navbar.html"%}
+{%block content%}
+<h1 class="bubble-title">Edit Account</h1>
+<br>
+<div class="form-card">
+  <form action="" method="POST" enctype="multipart/form-data">
+    {{form.hidden_tag()}}
+    <fieldset style="border:0;" class="">
+      <legend class="">Change Username</legend>
+      <div class="">
+
+        {%if form.name.errors%}
+
+          {{form.name(class="form-field")}}
+          <div class="invalid-feedback">
+            {%for error in form.name.errors%}
+              <span>{{error}}</span>
+            {%endfor%}
+          </div>
+        {%else%}
+          {{form.name(class="form-field")}}
+        {%endif%}
+      </div>
+    </fieldset>
+    <br>
+    {{form.submit(class="button")}}
+  </form>
+
+  
+  <br>
+  <script type="text/javascript" src="{{url_for('static',filename='scripts/hover.js')}}" id="game"></script>
+</div>
+{%endblock%}

@@ -1,0 +1,54 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block head %}
+
+
+{% endblock %}
+
+{% block body %}
+<div class="title">
+	<div id="logo">
+	{% if current_user.is_admin %}
+		<a href="{{url_for("admin")}}"><img class="logo" id="title-logo" src="{{url_for('static',filename='images/logo.PNG')}}"></a>
+	{% else %}
+		<a href="{{url_for("home")}}"><img class="logo" id="title-logo" src="{{url_for('static',filename='images/logo.PNG')}}"></a>
+	{% endif %}
+	<a href="{{url_for('home')}}"><h1>Rank That</h1></a>
+	</div>
+	<div id="search">
+		<form action="" method="post">
+			{{search.hidden_tag()}}
+			{{search.content(id="searchbar", placeholder="Search Categories")}}
+			{{search.submit(type="image", src=url_for('static',filename='images/magnifying-glass.jpg'), id="search-glass")}}
+		</form>
+	</div>
+	<div id="navbar-nav">
+		{% if current_user.is_authenticated %}
+			<a class="user-button" href="{{ url_for('logout') }}">Logout</a>
+			<a class="user-button" href="{{ url_for('account',user_id=current_user.id) }}">Account</a>
+		{% else %}
+			<a class="user-button" href="{{ url_for('login') }}">Login</a>
+			<a class="user-button" href="{{ url_for('register') }}">Register</a>
+		{% endif %}
+	</div>
+</div>
+
+{% block cat %}
+
+{% endblock %}
+{%with messages = get_flashed_messages(with_categories=true)%}
+  {%if messages%}
+    {%for category,message in messages%}
+      <div class="alert alert-{{category}} bubble-title">
+        {{message}}
+      </div>
+    {%endfor%}
+  {%endif%}
+{%endwith%}
+
+<div>
+	{% block content %}{% endblock %}
+</div>
+
+{% endblock %}

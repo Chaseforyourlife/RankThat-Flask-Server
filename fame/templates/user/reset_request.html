@@ -1,0 +1,31 @@
+{% extends "layouts/navbar.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag()}}
+            <h1 class="bubble-title">Reset Password Request</h1>
+
+                <div class="form-card">
+                    {{ form.email.label(class="") }}
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-field") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="form-field") }}
+                    {% endif %}
+
+
+                    <div class="">
+                      <br>
+                      {{ form.submit(class="button") }}
+                    </div>
+                </div>
+
+
+        </form>
+    </div>
+{% endblock content %}

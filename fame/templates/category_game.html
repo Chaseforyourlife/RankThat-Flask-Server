@@ -1,0 +1,33 @@
+{% extends 'layouts/category_navbar.html' %}
+
+
+{% block content %}
+	<label></label>
+
+	<br>
+
+	<div id="game_div">
+
+
+		<div id="left_noun"><h1 class="text-bubble" id="noun1-title">{{matchup[0].name}}</h1></div>
+		<span id="vertical-line"></span>
+		<div id="right_noun"><h1 class="text-bubble" id="noun2-title">{{matchup[1].name}}</h1></div>
+
+		<script type="text/javascript">
+			class person{
+				constructor(name,image,id){
+					this.name = name;
+					this.id=id;
+					this.image = image;
+
+				}
+			}
+
+			const category_id="{{category.category_id}}"
+			//const category_url =("{{(category.name.replace(' ','_')).replace("'","\'")}}");
+			//console.log(category_url)
+
+		</script>
+		<script type="text/javascript" src="{{url_for('static',filename='scripts/game.js')}}" id="game"></script>
+	</div>
+{% endblock %}

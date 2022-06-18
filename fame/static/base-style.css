@@ -1,0 +1,401 @@
+
+*{
+	padding:0px;
+	margin:0px;
+	font-family:sans-serif;
+	color:black;
+	font-weight:bold;
+	text-align:center;
+}
+
+/* Title and Navigation Bar */
+
+#body{
+	margin-top: 0px;
+	background:lightblue;
+	min-width: 800px;
+}
+
+.bubble-title{
+	text-shadow: 2px 2px 1px rgba(0,0,0,.2);
+	background-color: rgb(255,165,0);
+	padding-top:.5em;
+	padding-bottom:.5em;
+	font-size:25px;
+	height:auto;
+	box-shadow:0px 6px 6px 3px rgba(100,100,100,0.21);
+}
+
+.user-button{
+	background-color:white;
+	float:right;
+	height:auto;
+	margin:auto;
+	padding:8px;
+	font-size:13px;
+	text-shadow: 0 0 0px gray;
+	border:2px solid lightblue;
+	border-radius: 10%;
+	font-weight: bold;
+	text-decoration: none;
+
+	letter-spacing:1px;
+
+
+}
+
+
+.button{
+	border-radius:4px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+}
+
+
+.category-card{
+	box-shadow:0px 6px 6px 3px rgba(112,112,112,0.61);
+	border:7px solid white;
+	border-color:white;
+	background-color: white;
+	width:15%;
+	height:11em;
+	padding:2%;
+	margin:10px,0%,10px,0%;
+	margin-left:2%;
+	margin-right:2%;
+	margin-top:10px;
+	margin-bottom: 10px;
+	float:left;
+	border-radius: 10px;
+
+}
+
+
+
+
+
+.category-image{
+	width:125px;
+	height:125px;
+	border-radius: 5px;
+}
+
+.category-navbar{
+	text-shadow: 2px 2px 1px rgba(0,0,0,0.2);
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: space-evenly;
+	list-style-type: None;
+	background-color: orange;
+	height:auto;
+
+}
+
+
+.category-navbar-item{
+	padding-top:.5em;
+	padding-bottom:.5em;
+	font-size:25px;
+
+}
+
+.category-title{
+	font-size: 16px;
+	padding-bottom:3%;
+	text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+}
+
+.container{
+	background:white;
+	width:50%;
+	margin-top:25px;
+	padding:3%;
+	margin-left: 25%;
+	margin-right:25%;
+	padding-bottom:7%;
+}
+
+
+.flex-container{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: space-evenly;
+	align-items: stretch;
+}
+
+
+.form-card{
+	--card-width:50%;
+	--card-padding:2%;
+	--card-border-size:7px;
+	box-shadow:0px 6px 6px 3px rgba(112,112,112,0.61);
+	border:var(--card-border-size) solid white;
+	border-color:white;
+	background-color: white;
+	width:var(--card-width);
+	height:auto;
+	padding:var(--card-padding);
+	margin:10px,0%,10px,0%;
+	margin-left:calc((100% - var(--card-width) - var(--card-padding)*2 - var(--card-border-size)*2)/2);
+	margin-right:calc((100% - var(--card-width) - var(--card-padding)*2 - var(--card-border-size)*2)/2);
+	margin-top:10px;
+	margin-bottom: 10px;
+
+	border-radius: 10px;
+
+}
+
+.form-field{
+	height:1.5em;
+	border-radius: 0;
+}
+
+
+.underline{
+	text-decoration: underline;
+}
+
+.italics{
+	font-style:italic;
+}
+.bolder{
+	font-weight: bolder;
+}
+
+
+.leaderboard-card{
+	--leaderboard-card-width:50%;
+	--leaderboard-card-padding:2%;
+	--leaderboard-card-border-size:7px;
+	box-shadow:0px 6px 6px 3px rgba(112,112,112,0.61);
+	border:var(--leaderboard-card-border-size) solid white;
+	border-color:white;
+	background-color: white;
+	width:var(--leaderboard-card-width);
+	height:auto;
+	padding:var(--leaderboard-card-padding);
+	margin:10px,0%,10px,0%;
+	margin-left:calc((100% - var(--leaderboard-card-width) - var(--leaderboard-card-padding)*2 - var(--leaderboard-card-border-size)*2)/2);
+	margin-right:calc((100% - var(--leaderboard-card-width) - var(--leaderboard-card-padding)*2 - var(--leaderboard-card-border-size)*2)/2);
+	margin-top:10px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+}
+
+
+.profile-pic{
+	width:10%;
+	height:10%;
+	float:left;
+}
+.right{
+	float:right;
+}
+.left{
+	float:left;
+}
+.title{
+
+	color:lightblue;
+	font-style:bold;
+	background:black;
+	font-size:15px;
+	letter-spacing: .2em;
+	width:100%;
+
+	width:100%;
+	position: relative;
+	top:0px;
+	height: 80px;
+	--logo-width:calc(70px + 25%);
+	--navbar-nav-width:max(15%,170px);
+	--search-width:calc(100% - var(--logo-width) - var(--navbar-nav-width));
+
+}
+
+#logo{
+	float:left;
+	height:inherit;
+
+	width:var(--logo-width);
+}
+#navbar-nav{
+	float:left;
+	height:inherit;
+
+	width:var(--navbar-nav-width);
+
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: space-evenly;
+	align-items: stretch;
+}
+#search{
+	float:left;
+	height:inherit;
+
+	width:var(--search-width);
+}
+
+.title h1{
+	font-weight: bold;
+	color:lightblue;
+	text-align: left;
+	position:absolute;
+	left:80px;
+	line-height:1em;
+	font-size:min(max(32px,4vw),60px);
+
+	top: 50%;
+	transform: translateY(-50%);
+	display:block;
+
+	text-shadow: 4px 3px 0 rgba(65,110,176,0.4);
+
+
+}
+#add_person_button{
+	width:15%;
+	height:20px;
+	float:left;
+	margin-left: 10%;
+	font-size:15px;
+
+}
+
+
+#category-name{
+	border-top:2px solid black;
+	padding:0px;
+	font-size:20px;
+	text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+}
+
+.logo{
+	border-radius: 50%;
+}
+
+#searchbar{
+	float:left;
+	position: relative;
+	height:50px;
+	top:15px;
+
+	width:auto;
+	font-weight: normal;
+	width:calc(100% - 50px);
+	border-radius:10px;
+	text-align: left;
+	text-indent: 15px;
+	font-size:20px;
+
+
+
+	-webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+
+  text-shadow: none;
+  display: inline-block;
+
+  appearance: auto;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+}
+
+#search-glass{
+	border-radius: 5px;
+	width:40px;
+	position:relative;
+
+	top:20px;
+	background:none;
+
+}
+.title img[id="title-logo"]{
+	position:absolute;
+	left:0;
+	height: 60px;
+	top:10px;
+	left:10px;
+}
+
+
+.text-bubble{
+	background-color:white;
+	border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+#main-nav-bar{
+	width:100%;
+	float:left;
+	background-color: orange;
+	justify-content: center;
+
+}
+
+#main-nav-bar-tabs{
+
+	font-size: 20px;
+	list-style:none;
+	text-align:center;
+	line-height:2em;
+	justify-content:space-evenly;
+	display:flex;
+
+}
+
+#main-nav-bar-tabs a{
+	color:black;
+
+	font-weight: bold;
+	font-size:100%;
+	background:orange;
+
+
+
+	text-decoration:none;
+	text-decoration-style: none;
+}
+
+
+/* ACCOUNT */
+.profile-category {
+	color:black;
+	background-color: orange;
+	margin:10px;
+
+	padding:6px;
+	border:.5vw black solid;
+	border-radius:5px;
+	box-shadow:0px 2px 2px 1px rgba(112,112,112,0.4);
+}
+
+.profile-category *{
+	color:inherit;
+	font-weight: bolder;
+}
+
+
+/* Oranize General Classes Alphabetically */

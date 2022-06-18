@@ -1,0 +1,24 @@
+{% extends 'layouts/navbar.html' %}
+
+
+{%block content%}
+
+<h1 class="bubble-title">Search Results for '{{search_input}}'</h1>
+<br>
+<div class="flex-container">
+  {% for category in categories %}
+    
+    <div class="category-card" onclick="location.href='{{url_for('category',category_url=category.name.replace(' ','_'))}}';" style="cursor: pointer;">
+      <h2 class='category-title'>{{category.name}}</h2>
+      <img src="{{image_files[category.category_id]}}" class='category-image' alt="">
+    </div>
+
+  {% endfor %}
+</div>
+<br>
+<h3 class="bubble-title">Didn't find the category you were looking for? <a href="{{url_for('add_category_request')}}">Request to add one!</a></h3>
+
+
+<script type="text/javascript" src="{{url_for('static',filename='scripts/hover.js')}}" id="game"></script>
+
+{%endblock%}
